@@ -11,15 +11,22 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:anyconsole.helloWorld"
+		"onCommand:anyconsole.log"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "anyconsole.helloWorld",
-				"title": "Hello World"
+				"command": "anyconsole.log",
+				"title": "Log to console"
 			}
+		],
+		"keybindings": [
+			{
+                "command": "anyconsole.log",
+                "key": "ctrl+alt+c c",
+                "when": "editorTextFocus"
+            }
 		]
 	},
 	"scripts": {
