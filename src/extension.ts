@@ -1,15 +1,15 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
+  let disposable = vscode.commands.registerCommand(
+    "anyconsole.helloWorld",
+    () => {
+      vscode.window.showInformationMessage("asd");
+    }
+  );
 
-
-	let disposable = vscode.commands.registerCommand('anyconsole.helloWorld', () => {
-
-		vscode.window.showInformationMessage('Hello World from anyconsole!');
-	});
-
-	context.subscriptions.push(disposable);
+  context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() { }
+export function deactivate() {}
